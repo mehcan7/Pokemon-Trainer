@@ -1,5 +1,3 @@
-// Home pagina: te zien op URL "/" (zie de <Route path="/" .../> in App.jsx).
-// Dit is puur een welkomstscherm, geen logica nodig.
 function Home() {
   return (
     <div>
