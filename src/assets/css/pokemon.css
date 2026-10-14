@@ -1,0 +1,21 @@
+.pokemon-sprite-wrap {
+  display: block;
+  width: 90px;
+  height: 90px;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #eaf2fb;
+  margin: 0 auto 10px auto;
+}
+
+.pokemon-sprite {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+.pokemon-name {
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  text-transform: capitalize;
+}

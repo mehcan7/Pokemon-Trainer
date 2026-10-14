@@ -1,0 +1,49 @@
+/* herbruikbare patronen die op meerdere pagina's voorkomen */
+.page-card {
+  background-color: var(--color-card);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 70vh;
+}
+
+.team-count {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  margin-bottom: 1.5rem;
+}
+
+.pokemon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-card {
+  width: 220px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.detail-actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.detail-actions button {
+  margin: 0 0.5rem;
+}

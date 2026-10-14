@@ -1,0 +1,22 @@
+nav {
+  background-color: var(--color-sidebar);
+  padding: 1.5rem 1rem;
+}
+
+nav li {
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+}
+
+nav a.active,
+nav a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}

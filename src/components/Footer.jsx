@@ -1,7 +1,9 @@
+import '../assets/css/footer.css'
+
 function Footer() {
   return (
     <footer>
-      <p>Pokemon Team Manager</p>
+      <p></p>
     </footer>
   )
 }

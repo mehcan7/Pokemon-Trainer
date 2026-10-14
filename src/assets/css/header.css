@@ -1,0 +1,31 @@
+header {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.header-dots {
+  float: right;
+}
+
+.header-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 6px;
+  background-color: #fff;
+}
+
+.header-dots .dot-blue {
+  background-color: var(--color-sidebar);
+}
+
+.header-dots .dot-yellow {
+  background-color: var(--color-accent);
+}

@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import '../assets/css/navigation.css'
 
 function Navigation() {
   return (
     <nav>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/list">List</Link></li>
-        <li><Link to="/detail/1">Detail</Link></li>
+        <li><NavLink to="/" end>Home</NavLink></li>
+        <li><NavLink to="/list">List</NavLink></li>
+        <li><NavLink to="/team">Team</NavLink></li>
       </ul>
     </nav>
   )

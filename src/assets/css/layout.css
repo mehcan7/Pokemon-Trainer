@@ -1,0 +1,23 @@
+/* layout: header boven, sidebar links, inhoud rechts, footer onder */
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+}
+
+nav {
+  width: 220px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+footer {
+  width: 100%;
+}

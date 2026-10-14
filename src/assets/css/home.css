@@ -1,0 +1,19 @@
+.home-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.home-hero .pokemon-sprite-wrap {
+  width: 160px;
+  height: 160px;
+  padding: 25px;
+}
+
+.home-hero .pokemon-sprite {
+  width: 110px;
+  height: 110px;
+}
+
+.home-hero .muted {
+  color: var(--color-text-muted);
+}
