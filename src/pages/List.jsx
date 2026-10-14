@@ -46,7 +46,7 @@ function List({ team, setTeam }) {
       <ul className="pokemon-grid">
         {filteredPokemons.map((p) => (
           <li className="pokemon-card" key={p.name}>
-            <Pokemon name={p.name} sprite={p.sprites.front_default} />
+            <Pokemon name={p.name} sprite={p.sprites.front_default} number={p.id} />
             <Link to={`/detail/${p.id}`}>
               <button>Bekijk</button>
             </Link>
