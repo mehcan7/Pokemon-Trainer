@@ -1,4 +1,3 @@
-/* layout: header boven, sidebar links, inhoud rechts, footer onder */
 #root {
   display: flex;
   flex-wrap: wrap;

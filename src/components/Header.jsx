@@ -1,5 +1,7 @@
 import '../assets/css/header.css'
 
+// Header staat in App.jsx buiten <Routes>, dus hij blijft altijd zichtbaar,
+// ongeacht welke pagina je bekijkt.
 function Header() {
   return (
     <header>

@@ -1,4 +1,3 @@
-/* herbruikbare patronen die op meerdere pagina's voorkomen */
 .page-card {
   background-color: var(--color-card);
   border-radius: 16px;
@@ -63,4 +62,33 @@
 
 .detail-actions button {
   margin: 0 0.5rem;
+}
+
+.team-block {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.team-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.team-block-header h3 {
+  margin: 0;
+}
+
+.empty-slot {
+  border-style: dashed;
+  color: var(--color-text-muted);
+}
+
+.empty-plus {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }

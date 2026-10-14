@@ -2,20 +2,30 @@ import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Pokemon from '../components/Pokemon'
 
-function Detail({ team, setTeam, favorites, setFavorites }) {
+// Detail pagina (URL "/detail/:id"): haalt 1 Pokemon op en laat je 'm
+// toevoegen aan een team (je kiest welk team) en favoriet maken.
+function Detail({ teams, setTeams, favorites, setFavorites }) {
   const { id } = useParams()
   const [pokemon, setPokemon] = useState(null)
-
-  function removeFromTeam() {
-    setTeam(team.filter((p) => p.name !== pokemon.name))
-  }
+  const [selectedTeamId, setSelectedTeamId] = useState('') // id van het gekozen team in de <select>
 
   function addToTeam() {
-    if (team.length >= 6) {
-      alert('Je team is al vol (max 6)')
+    // waarden uit een <select> zijn altijd tekst, ook al is de id een getal.
+    // Number(...) zet het weer om zodat de vergelijking hieronder klopt.
+    const chosenTeam = teams.find((t) => t.id === Number(selectedTeamId))
+
+    if (!chosenTeam) {
+      alert('Kies eerst een team')
       return
     }
-    setTeam([...team, pokemon])
+    if (chosenTeam.pokemons.length >= 6) {
+      alert('Dit team is al vol (max 6)')
+      return
+    }
+
+    setTeams(teams.map((t) =>
+      t.id === chosenTeam.id ? { ...t, pokemons: [...t.pokemons, pokemon] } : t
+    ))
   }
 
   function isFavorite() {
@@ -38,7 +48,7 @@ function Detail({ team, setTeam, favorites, setFavorites }) {
     }
 
     fetchPokemon()
-  }, [id])
+  }, [id]) // haalt opnieuw op als je van de ene Pokemon naar de andere navigeert
 
   if (!pokemon) {
     return <p>Laden...</p>
@@ -52,13 +62,25 @@ function Detail({ team, setTeam, favorites, setFavorites }) {
         <Pokemon name={pokemon.name} sprite={pokemon.sprites.front_default} />
 
         <div className="detail-actions">
-          <button onClick={addToTeam}>Toevoegen aan team</button>
+          {teams.length === 0 ? (
+            <p className="muted">Je hebt nog geen teams. Maak er eerst een aan op de Teams-pagina.</p>
+          ) : (
+            <>
+              <select value={selectedTeamId} onChange={(e) => setSelectedTeamId(e.target.value)}>
+                <option value="">Kies een team</option>
+                {teams.map((t) => (
+                  <option key={t.id} value={t.id}>{t.name}</option>
+                ))}
+              </select>
+              <button onClick={addToTeam}>Toevoegen aan team</button>
+            </>
+          )}
+
           {isFavorite() ? (
             <button className="btn-accent" onClick={removeFromFavorites}>Favoriet verwijderen</button>
           ) : (
             <button className="btn-accent" onClick={addToFavorites}>Favoriet toevoegen</button>
           )}
-          <button className="btn-outline" onClick={removeFromTeam}>Verwijderen</button>
         </div>
       </div>
     </div>
