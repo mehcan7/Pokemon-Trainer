@@ -2,6 +2,9 @@ header {
   background-color: var(--color-primary);
   color: #fff;
   padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header h1 {
@@ -10,15 +13,14 @@ header h1 {
 }
 
 .header-dots {
-  float: right;
+  display: flex;
+  gap: 6px;
 }
 
 .header-dots span {
-  display: inline-block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  margin-left: 6px;
   background-color: #fff;
 }
 
