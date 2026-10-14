@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Pokemon from '../components/Pokemon'
 
 function Team({ team, setTeam }) {
@@ -13,9 +12,7 @@ function Team({ team, setTeam }) {
         {team.map((p) => (
           <li className="pokemon-card" key={p.name}>
             <Pokemon name={p.name} sprite={p.sprites.front_default} />
-            <Link to={`/detail/${p.id}`}>
-              <button>Bekijk</button>
-            </Link>
+            <button className="btn-outline" onClick={() => removeFromTeam(p)}>Verwijderen</button>
           </li>
         ))}
       </ul>
