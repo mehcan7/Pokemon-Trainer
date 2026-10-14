@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Pokemon from '../components/Pokemon'
 
-function Detail({ team, setTeam }) {
+function Detail({ team, setTeam, favorites, setFavorites }) {
   const { id } = useParams()
   const [pokemon, setPokemon] = useState(null)
 
@@ -16,6 +16,18 @@ function Detail({ team, setTeam }) {
       return
     }
     setTeam([...team, pokemon])
+  }
+
+  function isFavorite() {
+    return favorites.some((p) => p.name === pokemon.name)
+  }
+
+  function addToFavorites() {
+    setFavorites([...favorites, pokemon])
+  }
+
+  function removeFromFavorites() {
+    setFavorites(favorites.filter((p) => p.name !== pokemon.name))
   }
 
   useEffect(() => {
@@ -41,6 +53,11 @@ function Detail({ team, setTeam }) {
 
         <div className="detail-actions">
           <button onClick={addToTeam}>Toevoegen aan team</button>
+          {isFavorite() ? (
+            <button className="btn-accent" onClick={removeFromFavorites}>Favoriet verwijderen</button>
+          ) : (
+            <button className="btn-accent" onClick={addToFavorites}>Favoriet toevoegen</button>
+          )}
           <button className="btn-outline" onClick={removeFromTeam}>Verwijderen</button>
         </div>
       </div>

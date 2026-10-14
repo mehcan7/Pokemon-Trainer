@@ -34,3 +34,8 @@ button.btn-outline {
   border-color: var(--color-sidebar);
   color: var(--color-sidebar);
 }
+
+button.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-text);
+}

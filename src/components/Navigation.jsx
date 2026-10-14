@@ -7,6 +7,7 @@ function Navigation() {
       <ul>
         <li><NavLink to="/" end>Home</NavLink></li>
         <li><NavLink to="/list">List</NavLink></li>
+        <li><NavLink to="/favorites">Favorieten</NavLink></li>
         <li><NavLink to="/team">Team</NavLink></li>
       </ul>
     </nav>

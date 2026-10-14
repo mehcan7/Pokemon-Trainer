@@ -12,6 +12,10 @@
   margin-left: 0.5rem;
 }
 
+.muted {
+  color: var(--color-text-muted);
+}
+
 .search-input {
   display: block;
   width: 100%;
@@ -32,11 +36,24 @@
 }
 
 .pokemon-card {
+  position: relative;
   width: 220px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
+}
+
+.pokemon-card button {
+  margin-top: 0.5rem;
+}
+
+.favorite-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--color-accent);
+  font-size: 1.25rem;
 }
 
 .detail-actions {
