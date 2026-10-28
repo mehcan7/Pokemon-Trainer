@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Pokemon from '../components/Pokemon'
 
-// Favorites pagina (URL "/favorites"): toont de Pokemon die je via de
-// Detail-pagina als favoriet hebt gemarkeerd, met eigen zoekbalk.
 function Favorites({ favorites, setFavorites }) {
   const [search, setSearch] = useState('')
 

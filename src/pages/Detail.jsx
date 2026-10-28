@@ -2,16 +2,12 @@ import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Pokemon from '../components/Pokemon'
 
-// Detail pagina (URL "/detail/:id"): haalt 1 Pokemon op en laat je 'm
-// toevoegen aan een team (je kiest welk team) en favoriet maken.
 function Detail({ teams, setTeams, favorites, setFavorites }) {
   const { id } = useParams()
   const [pokemon, setPokemon] = useState(null)
-  const [selectedTeamId, setSelectedTeamId] = useState('') // id van het gekozen team in de <select>
+  const [selectedTeamId, setSelectedTeamId] = useState('')
 
   function addToTeam() {
-    // waarden uit een <select> zijn altijd tekst, ook al is de id een getal.
-    // Number(...) zet het weer om zodat de vergelijking hieronder klopt.
     const chosenTeam = teams.find((t) => t.id === Number(selectedTeamId))
 
     if (!chosenTeam) {
@@ -48,7 +44,7 @@ function Detail({ teams, setTeams, favorites, setFavorites }) {
     }
 
     fetchPokemon()
-  }, [id]) // haalt opnieuw op als je van de ene Pokemon naar de andere navigeert
+  }, [id])
 
   if (!pokemon) {
     return <p>Laden...</p>

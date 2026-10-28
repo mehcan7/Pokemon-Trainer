@@ -1,9 +1,5 @@
 import '../assets/css/pokemon.css'
 
-// Herbruikbaar kaartje-onderdeel: plaatje + naam, gebruikt op Home, List,
-// Favorites, Team en Detail. number/abilities zijn optioneel: ze worden
-// alleen getoond als ze meegegeven zijn (anders is props.number undefined,
-// en toont {props.number && ...} dus niets).
 function Pokemon(props) {
     return(
         <>

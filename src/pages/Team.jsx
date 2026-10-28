@@ -1,28 +1,23 @@
 import Pokemon from '../components/Pokemon'
 
-// Team pagina (URL "/team"): overzicht van al je teams.
-// Elk team is een los object: { id, name, pokemons: [...] }.
 function Team({ teams, setTeams }) {
-  // vraagt een naam en voegt een nieuw, leeg team toe aan de lijst
   function createTeam() {
     const name = prompt('Naam van het nieuwe team?')
     if (!name) {
-      return // op Annuleren geklikt, of niks ingevuld -> niks doen
+      return
     }
     setTeams([...teams, { id: Date.now(), name, pokemons: [] }])
   }
 
-  // verwijdert een heel team uit de lijst
   function deleteTeam(teamId) {
     setTeams(teams.filter((t) => t.id !== teamId))
   }
 
-  // haalt 1 Pokemon uit 1 specifiek team
   function removeFromTeam(teamId, pokemon) {
     setTeams(teams.map((t) =>
       t.id === teamId
         ? { ...t, pokemons: t.pokemons.filter((p) => p.name !== pokemon.name) }
-        : t // andere teams blijven ongewijzigd
+        : t
     ))
   }
 
@@ -33,8 +28,6 @@ function Team({ teams, setTeams }) {
       <button onClick={createTeam}>+ Nieuw team</button>
 
       {teams.map((t) => {
-        // bouw een simpel lijstje met het aantal lege plekken dat dit team nog heeft
-        // (bijv. bij 4 Pokemon in het team: [0, 1] -> 2 lege plekken)
         const aantalLegePlekken = 6 - t.pokemons.length
         const legePlekken = []
         for (let i = 0; i < aantalLegePlekken; i++) {

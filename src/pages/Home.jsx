@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/css/home.css'
 
-// Home pagina (URL "/"): haalt 1 vaste Pokemon op als welkomstplaatje.
 function Home() {
-  const [pokemon, setPokemon] = useState(null) // null = nog niet opgehaald
+  const [pokemon, setPokemon] = useState(null)
 
   useEffect(() => {
     async function fetchPokemon() {
