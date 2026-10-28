@@ -18,17 +18,20 @@ function App() {
   return (
     <>
       <Header />
-      <Navigation />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/list" element={<List favorites={favorites} />} />
-          <Route path="/favorites" element={<Favorites favorites={favorites} setFavorites={setFavorites} />} />
-          <Route path="/team" element={<Team teams={teams} setTeams={setTeams} />} />
-          <Route path="/detail/:id" element={<Detail teams={teams} setTeams={setTeams} favorites={favorites} setFavorites={setFavorites} />} />
-        </Routes>
-      </main>
+      <div className="content-row">
+        <Navigation />
+
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/list" element={<List favorites={favorites} />} />
+            <Route path="/favorites" element={<Favorites favorites={favorites} setFavorites={setFavorites} />} />
+            <Route path="/team" element={<Team teams={teams} setTeams={setTeams} />} />
+            <Route path="/detail/:id" element={<Detail teams={teams} setTeams={setTeams} favorites={favorites} setFavorites={setFavorites} />} />
+          </Routes>
+        </main>
+      </div>
 
       <Footer />
     </>

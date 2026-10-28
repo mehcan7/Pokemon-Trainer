@@ -1,15 +1,15 @@
 .pokemon-sprite-wrap {
-  display: block;
   width: 90px;
   height: 90px;
-  padding: 15px;
   border-radius: 50%;
   background-color: #eaf2fb;
   margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pokemon-sprite {
-  display: block;
   width: 60px;
   height: 60px;
 }
